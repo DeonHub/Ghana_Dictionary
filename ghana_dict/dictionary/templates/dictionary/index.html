@@ -1,0 +1,49 @@
+{% extends 'dictionary/layout.html'%}
+
+{% block title%} Home page {% endblock%}
+
+{% block body%}
+
+{% comment %} <h1>Hello, worlder!</h1> {% endcomment %}
+
+<div>
+    <button id="english">English</button>
+
+    <button id="twi">Twi</button>
+</div>
+
+
+
+
+
+<form id="english_form">
+
+    {% csrf_token %}
+
+<div class="english_form" >
+    {{ english_form }}
+<div>
+
+    <input type="submit"/>
+
+</form>
+
+<br><br>
+
+
+<form id="twi_form">
+
+    {% csrf_token %}
+
+
+<div class="twi_form" >
+    {{ twi_form }}
+<div>
+
+    <input type="submit"/>
+
+
+</form>
+
+
+{% endblock %}
