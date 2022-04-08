@@ -31,7 +31,38 @@
 <br><br>
 
 
-<form id="twi_form">
+
+<table>
+    <thead>
+        <tr>
+            <th>Word in English</th>
+            {% comment %} <th>Word in Twi</th>
+            <th>Meaning</th>
+            <th>Sentence</th> {% endcomment %}
+        </tr>
+    </thead>
+
+ 
+    <tbody>
+        <tr>
+           
+    {% comment %} {% for word in words_in_english %} {% endcomment %}
+                {% comment %} <td>{{ words_in_english.word_in_english }} </td> {% endcomment %}
+                {% comment %} <td>{{ english_word.word_in_twi }} </td>
+                <td>{{ english_word.word_meaning }} </td>
+                <td>{{ english_word.word_in_sentence }} </td> {% endcomment %}
+    {% comment %} {% endfor %} {% endcomment %}
+  
+        </tr>
+    </tbody>
+
+</table>
+
+{% comment %} <div>
+    {{ english_word }}
+</div> {% endcomment %}
+
+{% comment %} <form id="twi_form">
 
     {% csrf_token %}
 
@@ -43,7 +74,7 @@
     <input type="submit"/>
 
 
-</form>
+</form> {% endcomment %}
 
 
 {% endblock %}

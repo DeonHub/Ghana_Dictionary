@@ -11,7 +11,7 @@ class TranslationForm(forms.Form):
 
 
 class Word_In_English_Form(forms.Form):
-    word_in_english = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Enter an English word to search'}), max_length=150)
+    word_in_english = forms.CharField( max_length=150 )
 
 class Word_In_Twi_Form(forms.Form):
     word_in_twi = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Enter an Twi word to search'}), max_length=150)
