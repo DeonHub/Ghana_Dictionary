@@ -12,10 +12,17 @@
 
 	<h1></h1>
 
+
     {% block body%}
 
     {% endblock %}
+	
 
-	{% comment %} <script src="{% static 'dictionary/js/script.js' %}"></script>   {% endcomment %}
+ <script src="{% static 'dictionary/js/script.js' %}"></script>
+ <script>
+	document.querySelector(".audio").addEventListener("click", () => {
+		alert("Audio is currently not available")
+	})
+ </script>
 </body>
 </html>

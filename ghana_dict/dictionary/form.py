@@ -10,8 +10,9 @@ class TranslationForm(forms.Form):
     translations = forms.ChoiceField(choices = translations)
 
 
+
 class Word_In_English_Form(forms.Form):
-    word_in_english = forms.CharField( max_length=150 )
+    word_in_english = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Enter a word in english'}))
 
 class Word_In_Twi_Form(forms.Form):
-    word_in_twi = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Enter an Twi word to search'}), max_length=150)
+    word_in_twi = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Enter a word in twi'}))

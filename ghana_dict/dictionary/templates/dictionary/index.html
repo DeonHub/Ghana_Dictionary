@@ -4,77 +4,61 @@
 
 {% block body%}
 
-{% comment %} <h1>Hello, worlder!</h1> {% endcomment %}
-
 <div>
-    <button id="english">English</button>
+<h2>Type a word to search for </h2>
+    
+<div id="english_form">
+    <form  action="/english" method="get">
 
-    <button id="twi">Twi</button>
+        {% csrf_token %}
+
+    <div class="english_form" >
+        {{ english_form }}
+    </div>
+
+        <input type="submit"/>
+
+    </form>
+</div>
+
+
+<div id="twi_form" style="display: none">
+
+    <form action="/twi" method="get">
+
+        {% csrf_token %}
+
+    <div class="twi_form" >
+        {{ twi_form }}
+    </div>
+
+        <input type="submit"/>
+
+    </form>
 </div>
 
 
 
 
-
-<form id="english_form">
-
-    {% csrf_token %}
-
-<div class="english_form" >
-    {{ english_form }}
+<br><br>
 <div>
+    <button id="english">English</button>
 
-    <input type="submit"/>
-
-</form>
-
+    <button id="twi">Twi</button>
+</div>
 <br><br>
 
 
 
-<table>
-    <thead>
-        <tr>
-            <th>Word in English</th>
-            {% comment %} <th>Word in Twi</th>
-            <th>Meaning</th>
-            <th>Sentence</th> {% endcomment %}
-        </tr>
-    </thead>
 
- 
-    <tbody>
-        <tr>
-           
-    {% comment %} {% for word in words_in_english %} {% endcomment %}
-                {% comment %} <td>{{ words_in_english.word_in_english }} </td> {% endcomment %}
-                {% comment %} <td>{{ english_word.word_in_twi }} </td>
-                <td>{{ english_word.word_meaning }} </td>
-                <td>{{ english_word.word_in_sentence }} </td> {% endcomment %}
-    {% comment %} {% endfor %} {% endcomment %}
-  
-        </tr>
-    </tbody>
+</div>
 
-</table>
+
 
 {% comment %} <div>
     {{ english_word }}
-</div> {% endcomment %}
+</div>  {% endcomment %}
 
-{% comment %} <form id="twi_form">
-
-    {% csrf_token %}
-
-
-<div class="twi_form" >
-    {{ twi_form }}
-<div>
-
-    <input type="submit"/>
-
-
-</form> {% endcomment %}
 
 
 {% endblock %}
