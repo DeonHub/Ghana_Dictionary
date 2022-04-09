@@ -4,31 +4,6 @@
 
 {% block body%}
 
-{% comment %} <h1>Hello, worlder!</h1> {% endcomment %}
-
-
-
-{% comment %} 
-{% for word in words_in_english %}
-
-<h3>Word in English: </h3><p>{{ word.word_in_english }}</p>
-<h2>Word in Twi: </h3><p>{{ word.word_in_twi }}</p>
-<h3>Meaning: </h3><p>{{ word.word_meaning }}</p>
-<h3>Sentence: </h3><p>{{ word.word_in_sentence}}</p>
-
-
-{% empty %}
-<h2>Word doesnt exst</h2>
-
-{% endfor %}
-
-
-<br>
-<br>
-
-
-
-{% elif english is not True %} {% endcomment %}
 
 {% for word in words_in_twi %}
 
