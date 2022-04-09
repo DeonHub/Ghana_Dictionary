@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ahkip7&b-qay5z3x%8bk0eos+il0@7^b%c&cikl+oq+*0f^u(8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ghana-dict.herokuapp.com/', 'localhost']
 
 
 # Application definition
