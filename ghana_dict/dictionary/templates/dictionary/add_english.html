@@ -1,0 +1,51 @@
+{% extends 'dictionary/layout.html'%}
+
+{% block title%} Home page {% endblock%}
+
+{% block body%}
+
+<div>
+    {% if messages %}
+            {% for message in messages %}
+                    {{ message }}
+            {% endfor %}
+    {% endif  %}
+
+<h2> Recommend word </h2>
+    
+<div id="#">
+    <form method="post">
+
+        {% csrf_token %}
+
+    <div class="" >
+        {{ form.as_p }}
+    </div>
+
+        <input type="submit"/>
+
+    </form>
+</div>
+
+<br>
+<a href="/">Back to search</a>
+
+
+
+ <br><br>
+ {% comment %} {% for word in added_english_words%}
+<h4>{{ word.word_in_english}}</h4>
+ {% empty %}
+ <h4>None</h4>
+
+ {% endfor %} {% endcomment %}
+
+<br><br>
+<br><br>
+
+
+
+
+
+
+{% endblock %}

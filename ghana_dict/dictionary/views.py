@@ -1,9 +1,11 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
-from django.views.generic.edit import FormView
-from .models import Word_In_English, Word_In_Twi
+from django.views.generic.edit import FormView, CreateView
+from .models import Add_English_Word, Add_Twi_Word, Word_In_English, Word_In_Twi, Add_English_Form, Add_Twi_Form
 from .form import Word_In_English_Form, Word_In_Twi_Form
+from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 
 
 # Create your views here.
@@ -109,3 +111,33 @@ class TwiWordView(TemplateView):
                 })
         
 
+
+class AddEnglishWordView(SuccessMessageMixin, CreateView):
+    model = Add_English_Word
+    form_class = Add_English_Form
+    template_name = "dictionary/add_english.html"
+    success_url = "/add_english"
+    success_message = "Request successful"
+    added_english_words = Add_English_Word.objects.all()
+    
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["added_english_words"] = self.added_english_words
+        return context
+
+
+
+class AddTwiWordView(SuccessMessageMixin, CreateView):
+    model = Add_Twi_Word
+    form_class = Add_Twi_Form
+    template_name = "dictionary/add_twi.html"
+    success_url = "/add_twi"
+    success_message = "Request successful"
+    added_twi_words = Add_Twi_Word.objects.all()
+    
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["added_twi_words"] = self.added_twi_words
+        return context    
