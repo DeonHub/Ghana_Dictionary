@@ -4,6 +4,8 @@
 
 {% block body%}
 
+{% load gTTS %}
+
 
 {% for word in words_in_english %}
 
@@ -13,8 +15,24 @@
 <h3>Sentence: </h3><p>{{ word.word_in_sentence}}</p>
 
 <br>
+<audio controls id="myAudio" style="display:none">
+    <source src="{% say 'en-us' word.word_in_english %}">
+</audio>
+<audio controls id="myaudio" style="display:none">
+    <source src="{% say 'en-us' word.word_in_twi %}">
+</audio>
+<br>
+<button class="audio">Audio In English</button><br><br>
+<button class="twi_audio">Audio In Twi</button><br><br>
 
-<button class="audio">Audio</button><br><br>
+{% empty %}
+
+
+
+{% for word in close_words %}
+
+<h2>Did you mean</h2>
+<p>{{ word.word_in_english }}</p>
 
 {% empty %}
 
@@ -27,12 +45,13 @@
     {% endfor %}
 </ul>
 <br>
+
+{% endfor %}
+
 <a href="/add_english">Recommend word</a><br><br>
+
 {% endfor %}
 
 <a href="/">Back to search</a>
-
-
-
 
 {% endblock %}

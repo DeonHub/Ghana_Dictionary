@@ -6,6 +6,8 @@ from .models import Add_English_Word, Add_Twi_Word, Word_In_English, Word_In_Twi
 from .form import Word_In_English_Form, Word_In_Twi_Form
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
+# from gTTS.templatetags.gTTS import say
+import os
 
 
 # Create your views here.
@@ -16,6 +18,7 @@ class MainView(FormView):
     word_in_english = ""
     word_in_twi = ""
     form_classes = Word_In_English_Form, Word_In_Twi_Form
+    text = "Text From Views"
     
 
     def get(self, request):
@@ -61,6 +64,7 @@ class MainView(FormView):
                 'twi_form': twi_form, 
                 'words_in_english': Word_In_English.objects.all().filter(word_in_english= self.word_in_english.capitalize()),
                 'words_in_twi': Word_In_Twi.objects.all().filter(word_in_twi= self.word_in_twi.capitalize()),
+                'text': self.text,
                 })
          
 
@@ -84,6 +88,7 @@ class EnglishWordView(TemplateView):
             return render(request, self.template_name, { 
                 'words_in_english': self.words_in_english.filter(word_in_english= self.word_in_english.capitalize()), 
                 'other_words': Word_In_English.objects.all().order_by("word_in_english"),
+                'close_words': self.words_in_english.filter(word_in_english__icontains= self.word_in_english), 
                 })
         
 
@@ -108,6 +113,7 @@ class TwiWordView(TemplateView):
             return render(request, self.template_name, { 
                 'words_in_twi': self.words_in_twi.filter(word_in_twi= self.word_in_twi.capitalize()),
                 'other_words': Word_In_Twi.objects.all().order_by("word_in_twi"),
+                'close_words': self.words_in_twi.filter(word_in_twi__icontains= self.word_in_twi), 
                 })
         
 

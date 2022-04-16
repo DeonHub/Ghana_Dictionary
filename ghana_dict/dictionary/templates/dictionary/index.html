@@ -4,6 +4,16 @@
 
 {% block body%}
 
+{% comment %} {% load gTTS %}
+<audio controls autoplay>
+<source src="https://www.computerhope.com/jargon/m/example.mp3" type="audio/mpeg">
+</audio>
+
+<audio controls autoplay>
+    <source src="{% say 'en-us' 'Python Web framework' %}">
+</audio> {% endcomment %}
+
+
 <div>
 <h2>Type a word to search for </h2>
     
@@ -48,9 +58,6 @@
 </div>
 <br><br>
 
-
-
-
 </div>
 
 
@@ -58,6 +65,7 @@
 {% comment %} <div>
     {{ english_word }}
 </div>  {% endcomment %}
+
 
 
 

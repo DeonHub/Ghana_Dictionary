@@ -2,6 +2,8 @@
 <html lang="en-US">
 <head>
 	{% load static %}
+	{% load gTTS %}
+	
 	<meta charset="utf-8"/>
 	
 	<title>Ghana Dictionary - {% block title%} {% endblock %}</title>
@@ -20,9 +22,32 @@
 
  <script src="{% static 'dictionary/js/script.js' %}"></script>
  <script>
-	document.querySelector(".audio").addEventListener("click", () => {
-		alert("Audio service is currently not available")
+
+	document.querySelectorAll(".audio").forEach((button) => {
+		button.addEventListener("click", () => {
+			document.getElementById("myAudio").play(); 
+		})
 	})
+
+
+	document.querySelectorAll(".twi_audio").forEach((button) => {
+		button.addEventListener("click", () => {
+			document.getElementById("myaudio").play(); 
+		})
+	})
+
+
+	{% comment %} document.getElementById("twi_audio").addEventListener("click", () => {
+		document.getElementById("twi_audio").play(); 
+	}) {% endcomment %}
+
+	
  </script>
+
+
+
+
+
+
 </body>
 </html>
