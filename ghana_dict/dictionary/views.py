@@ -93,8 +93,6 @@ class EnglishWordView(TemplateView):
         
 
 
-
-
 class TwiWordView(TemplateView):
         template_name = "dictionary/twi_words.html"
         words_in_twi= Word_In_Twi.objects.all()
