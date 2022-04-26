@@ -19,11 +19,12 @@ class Word_In_Twi(models.Model):
     word_in_sentence = models.CharField(max_length=255)
 
 
+
 # Recommended words
 class Add_English_Word(models.Model):
     word_in_english = models.CharField(max_length=255)
     word_in_twi = models.CharField(max_length=255)
-    word_meaning = models.CharField(max_length=255)
+    word_meaning = models.CharField(max_length=255, null=True)
 
 
 class Add_English_Form(ModelForm):
@@ -39,10 +40,14 @@ class Add_English_Form(ModelForm):
             }
 
 
+
+# python manage.py makemigrations
+# python manage.py migrate
+
 class Add_Twi_Word(models.Model):
     word_in_twi = models.CharField(max_length=255)
     word_in_english = models.CharField(max_length=255)
-    word_meaning = models.CharField(max_length=255)
+    word_meaning = models.CharField(max_length=255, null=True)
 
 
 class Add_Twi_Form(ModelForm):

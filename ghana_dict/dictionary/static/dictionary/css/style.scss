@@ -1,0 +1,185 @@
+$red: #F37272;
+$brown: rgb(162, 0, 255);
+$whitey: #f0f0f0;
+
+$duration: .2s;
+$distance: 8px;
+$easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:700);
+
+
+
+
+// .active {
+//         text-decoration: underline;
+//         color: rgb(162, 0, 255);
+// }
+
+
+
+
+.buttons{
+        #english,
+        #twi {
+                color: white;
+                position: relative;
+                text-transform: uppercase;
+                text-decoration: none;
+                padding-bottom: 8px;
+
+                &:hover{
+                        color:$brown;
+                }
+              
+                 &:before,
+                &:after {
+                  content: '';
+                  position: absolute;
+                  bottom: 2px;
+                  left: 0; 
+                  right: 0;
+                  height: 2px;
+                  background-color: $brown;
+                  color: $brown;
+                }
+                &:before {
+                  opacity: 0;
+                  transform: translateY(- $distance);
+                  transition: transform 0s $easeOutBack, opacity 0s;
+                  color: $brown;
+                }
+                &:after {
+                  opacity: 0;
+                  transform: translateY($distance/2);
+                  transition: transform $duration $easeOutBack, opacity $duration;
+                  color: $brown;
+                }
+                &:hover,
+                &:focus {
+                  &:before,
+                  &:after {
+                    opacity: 1;
+                    transform: translateY(0);
+                    color: $brown;
+                    
+                  }
+                  &:before {
+                    transition: transform $duration $easeOutBack, opacity $duration;
+                    color: $brown;
+                  }
+                  &:after {
+                    transition: transform 0s $duration $easeOutBack, opacity 0s $duration;
+                    color: $brown;
+                  }
+                }
+              }
+        
+        
+}
+
+
+
+.lang{
+        margin-top:-50%;
+}
+
+.word{
+        display:flex;
+        flex-direction: row;
+}
+
+.day_word{
+        display:flex;
+        flex-direction: column;
+}
+
+.main{
+
+  background-color: rgb(3, 20, 130);
+
+  & .nav{
+    display: flex; 
+    color: white; 
+    margin-left: 5%; 
+    padding: 1% 0;
+  
+      & a{
+        text-decoration: none;
+        color: white;
+      }
+    
+  }
+
+
+
+  .english{
+    background-color: rgb(201, 198, 198);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  
+    & .words{
+      width: 60%;
+      height: 100%;
+      background-color: white;
+      border-radius: 10;
+      display: flex;
+      justify-content: center;
+      flex-direction:column;
+      align-items: center;
+  
+      & .audios{
+        cursor: pointer;
+        font-size: 30px;
+  
+  
+        &:hover{
+          font-size: 35px;
+        }
+  
+      }
+  
+      & hr{
+        border: 0; 
+        border-top: 1px solid #dee2e6;
+      }
+  
+      & .top{
+        display: flex;
+        flex-direction: row;
+      }
+  
+      & .cards{
+      // background-color: green;
+      width: 80%;
+      height: 80%;
+  
+              & a{
+                text-decoration: none;
+                color: black;
+              }
+  
+  
+  
+      & .text{
+        display:flex;
+        flex-direction: column;
+  
+        & span{
+          display:flex;
+          flex-direction: row;
+        }
+    
+        
+      }
+      
+      }
+    
+    }
+  
+  }
+}

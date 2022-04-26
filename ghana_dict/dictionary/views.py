@@ -10,6 +10,8 @@ from django.contrib.messages.views import SuccessMessageMixin
 import os
 
 
+
+
 # Create your views here.
 
 class MainView(FormView):
@@ -58,6 +60,7 @@ class MainView(FormView):
 
             english_form = Word_In_English_Form()       
             twi_form = Word_In_Twi_Form()       
+
 
             return render(request, self.template_name, {
                 'english_form': english_form, 
@@ -116,11 +119,12 @@ class TwiWordView(TemplateView):
         
 
 
+
 class AddEnglishWordView(SuccessMessageMixin, CreateView):
     model = Add_English_Word
     form_class = Add_English_Form
     template_name = "dictionary/add_english.html"
-    success_url = "/add_english"
+    success_url = "/"
     success_message = "Request successful"
     added_english_words = Add_English_Word.objects.all()
     
@@ -136,7 +140,7 @@ class AddTwiWordView(SuccessMessageMixin, CreateView):
     model = Add_Twi_Word
     form_class = Add_Twi_Form
     template_name = "dictionary/add_twi.html"
-    success_url = "/add_twi"
+    success_url = "/"
     success_message = "Request successful"
     added_twi_words = Add_Twi_Word.objects.all()
     

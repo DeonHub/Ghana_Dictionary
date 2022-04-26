@@ -4,44 +4,99 @@
 
 {% block body%}
 
-<div>
-    {% if messages %}
-            {% for message in messages %}
-                    {{ message }}
-            {% endfor %}
-    {% endif  %}
 
-<h2> Recommend word </h2>
+<div class="main">
+    <span style="" class="nav"><a href="/"><h4>Ghana Dictionary</h4></a></span>
+<div class="english">
+ 
+    <div class="words">
+
+
+
+
+        <div class="cards">
+<div class="text">
+
+    <main id="main"  style="padding: 0 30px 0px; font-size: medium; margin-top: -12%">
+   
+        <div id="about" class="about-area col-md-12 card mt-5 " style="float: left;">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 col-sm-12">
+                <div class="section-headline text-center">
     
-<div id="#">
-    <form method="post">
+                 <h2>Recommend word</h2>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+    
+              <div class="">
+                <div class="well-middle mb-5">
+                  <div class="single-well">
+                
 
-        {% csrf_token %}
+                    <div>
+                        {% if messages %}
+                                {% for message in messages %}
+                                        {{ message }}
+                                {% endfor %}
+                        {% endif  %}
 
-    <div class="" >
-        {{ form.as_p }}
-    </div>
 
-        <input type="submit"/>
 
-    </form>
+
+            <div id="#">
+                <form method="post">
+                    
+                {% csrf_token %}
+
+                    
+                    <div class="">
+                            
+        <input class="form-control shadow-none" type="text" name="word_in_english" placeholder="Enter a word in English" maxlength="255" required id="id_word_in_english"><br>
+        
+    
+        <input class="form-control shadow-none" type="text" name="word_in_twi" placeholder="Enter a word in Twi" maxlength="255" required id="id_word_in_twi"><br>
+
+       <textarea class="form-control shadow-none" name="word_meaning" cols="10" rows="10" maxlength="255" id="id_word_meaning" placeholder="Enter the word description..."></textarea><br>
+                        </div>
+                    
+                            <button class="btn btn-sm btn-primary" type="submit">Submit</button>
+                          
+
+                    
+                        </form><br>
+                        <a href="/"><button class="btn btn-success btn-sm" style="background-color: blue; color: white">Back to search</button></a>
+                    </div>
+
+                    
+            </div>
+
+
+                   
+                  </div>
+                </div>
+            
+              </div>
+    
+          
+              <!-- End col-->
+            </div>
+          </div>
+        </div><!-- End Translation Section -->
+    
+        
+    
+    
+      </main><!-- End #main -->
+    
+
 </div>
-
-<br>
-<a href="/">Back to search</a>
-
-
-
- <br><br>
- {% comment %} {% for word in added_english_words%}
-<h4>{{ word.word_in_english}}</h4>
- {% empty %}
- <h4>None</h4>
-
- {% endfor %} {% endcomment %}
-
-<br><br>
-<br><br>
+</div>
+</div>
+</div>
+</div>
 
 
 

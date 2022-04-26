@@ -4,58 +4,63 @@
 
 {% block body%}
 
-{% comment %} {% load gTTS %}
-<audio controls autoplay>
-<source src="https://www.computerhope.com/jargon/m/example.mp3" type="audio/mpeg">
-</audio>
+<section class="u-align-center u-clearfix u-image u-shading u-section-2" >
+    <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-sheet-1" style="margin-top:-7%">
+      <h1 class="u-text u-text-default-lg u-text-default-md u-title u-text-1" ><span>Ghana Dictionary</span></h1>
+      {% comment %} <h5 class="u-text u-text-default u-text-2"> MORE THAN 1200 ONLINE COURSES</h5>
+      <p class="u-text u-text-3"> Want to get professional knowledge in the fast-developing IT sphere? Pract offers a wide variety of online courses for everyone willing to enter the world of information technologies.</p> {% endcomment %}
 
-<audio controls autoplay>
-    <source src="{% say 'en-us' 'Python Web framework' %}">
-</audio> {% endcomment %}
+     <br>
+<br>
+  
+<div style="width:70%; margin-left:15%">
+    {% comment %} English form {% endcomment %}
 
+    <div id="english_form" class="mb-3">
+        <form  action="/english" method="get">
+            
+            <input type="hidden" name="csrfmiddlewaretoken" value="Asg2wwySp1rWo7WQ9KGHR1UsZW4RgPYwj8YgETFeTy2eOlBwuiaswZaEqu4NAiBg">
 
-<div>
-<h2>Type a word to search for </h2>
+        <div class="english_form" >
+         
+            {% comment %} <button class="btn btn-outline-success" type="button" id="button-addon1">Button</button> {% endcomment %}
+            <input class="form-control shadow-none" type="text" name="word_in_english" placeholder="Enter search term here...." required id="id_word_in_english" aria-label="Example text with button addon" aria-describedby="button-addon1">
     
-<div id="english_form">
-    <form  action="/english" method="get">
+        </div>
 
-        {% csrf_token %}
-
-    <div class="english_form" >
-        {{ english_form }}
+        </form>
     </div>
 
-        <input type="submit"/>
-
-    </form>
-</div>
 
 
-<div id="twi_form" style="display: none">
-    <form action="/twi" method="get">
-        {% csrf_token %}
+    {% comment %} English form {% endcomment %}
+    <div id="twi_form" style="display: none" class="mb-3">
+        <form  action="/twi" method="get">
+            
+            <input type="hidden" name="csrfmiddlewaretoken" value="Asg2wwySp1rWo7WQ9KGHR1UsZW4RgPYwj8YgETFeTy2eOlBwuiaswZaEqu4NAiBg">
 
-    <div class="twi_form" >
-        {{ twi_form }}
+        <div class="twi_form" >
+            <tr>
+    
+    <input class="form-control shadow-none" type="text" name="word_in_twi" placeholder="Enter a Twi term here...." required id="id_word_in_twi">
+    
+        </div>
+        </form>
     </div>
 
-        <input type="submit"/>
-
-    </form>
 </div>
 
 
+    <div class="buttons" style="margin-bottom:5%">
+        <button class="btn shadow-none" id="english">ENGLISH-TWI</button>
+    
+        <button class="btn shadow-none" id="twi">TWI-ENGLISH</button>
+    </div>
+    <br><br>
 
+    </div>
+  </section>
 
-<br><br>
-<div>
-    <button id="english">English</button>
-
-    <button id="twi">Twi</button>
-</div>
-<br><br>
-
-</div>
+  
 
 {% endblock %}

@@ -1,0 +1,137 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:700);
+.buttons #english,
+.buttons #twi {
+  color: white;
+  position: relative;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding-bottom: 8px;
+}
+.buttons #english:hover,
+.buttons #twi:hover {
+  color: rgb(162, 0, 255);
+}
+.buttons #english:before, .buttons #english:after,
+.buttons #twi:before,
+.buttons #twi:after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: rgb(162, 0, 255);
+  color: rgb(162, 0, 255);
+}
+.buttons #english:before,
+.buttons #twi:before {
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s;
+  color: rgb(162, 0, 255);
+}
+.buttons #english:after,
+.buttons #twi:after {
+  opacity: 0;
+  transform: translateY(4px);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
+  color: rgb(162, 0, 255);
+}
+.buttons #english:hover:before, .buttons #english:hover:after, .buttons #english:focus:before, .buttons #english:focus:after,
+.buttons #twi:hover:before,
+.buttons #twi:hover:after,
+.buttons #twi:focus:before,
+.buttons #twi:focus:after {
+  opacity: 1;
+  transform: translateY(0);
+  color: rgb(162, 0, 255);
+}
+.buttons #english:hover:before, .buttons #english:focus:before,
+.buttons #twi:hover:before,
+.buttons #twi:focus:before {
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
+  color: rgb(162, 0, 255);
+}
+.buttons #english:hover:after, .buttons #english:focus:after,
+.buttons #twi:hover:after,
+.buttons #twi:focus:after {
+  transition: transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s 0.2s;
+  color: rgb(162, 0, 255);
+}
+
+.lang {
+  margin-top: -50%;
+}
+
+.word {
+  display: flex;
+  flex-direction: row;
+}
+
+.day_word {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  background-color: rgb(3, 20, 130);
+}
+.main .nav {
+  display: flex;
+  color: white;
+  margin-left: 5%;
+  padding: 1% 0;
+}
+.main .nav a {
+  text-decoration: none;
+  color: white;
+}
+.main .english {
+  background-color: rgb(201, 198, 198);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .english .words {
+  width: 60%;
+  height: 100%;
+  background-color: white;
+  border-radius: 10;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.main .english .words .audios {
+  cursor: pointer;
+  font-size: 30px;
+}
+.main .english .words .audios:hover {
+  font-size: 35px;
+}
+.main .english .words hr {
+  border: 0;
+  border-top: 1px solid #dee2e6;
+}
+.main .english .words .top {
+  display: flex;
+  flex-direction: row;
+}
+.main .english .words .cards {
+  width: 80%;
+  height: 80%;
+}
+.main .english .words .cards a {
+  text-decoration: none;
+  color: black;
+}
+.main .english .words .cards .text {
+  display: flex;
+  flex-direction: column;
+}
+.main .english .words .cards .text span {
+  display: flex;
+  flex-direction: row;
+}/*# sourceMappingURL=style.css.map */
