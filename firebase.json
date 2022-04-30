@@ -1,16 +1,10 @@
 {
   "hosting": {
-    "public": "Ghana_Dictionary",
+    "public": "ghana_dict",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
     ]
   }
 }
